@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="colorFlipper.css">
   <title>A color flipper game</title>
 </head>
 <body>
+  <div> <h1></h1></div>
+   
+<button  id="change-color"onclick="clickmade()">clickme</button>
+ 
+   <script>
+   function clickmade(){
+     let color=randomColor();
+    document.body.style.backgroundColor=color ;
+    let colorName=document.querySelector("h1")
+    colorName.innerText='You have chosen Color:'+color
+     
+   }
+   function randomColor(){
+    let letters='0123456789ABCDEF';
+    let color='#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+        
+      }
+      console.log(color)
+      return color;
+      
+   }
+
+   </script>
+   
   
 </body>
 </html>
